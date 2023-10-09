@@ -10,4 +10,8 @@ const product = sequelize.define('product',{
   description:  {type : Sequelize.STRING , allowNull : false  }
 })
 
+product.findById = async function (id) {
+  return await this.findOne({ where: { id } });
+};
+
 module.exports = product ;
